@@ -2,11 +2,10 @@
 
 namespace App\Admin\Repositories;
 
-use App\Models\WorkCase as Model;
-use App\Models\WorkCaseCategory;
+use App\Models\WorkCaseCategory as Model;
 use Dcat\Admin\Repositories\EloquentRepository;
 
-class WorkCase extends EloquentRepository
+class WorkCaseCategory extends EloquentRepository
 {
     /**
      * Model.

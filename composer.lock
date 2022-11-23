@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d0a302c7012ac63f4ea84e899ab3fb1",
+    "content-hash": "cd7fa478a77b5336a1b5ef7821403310",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -190,6 +190,66 @@
                 "source": "https://github.com/jqhph/dcat-admin/tree/2.2.2-beta"
             },
             "time": "2022-06-27T14:42:39+00:00"
+        },
+        {
+            "name": "dcat/laravel-wherehasin",
+            "version": "0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jqhph/laravel-wherehasin.git",
+                "reference": "4efe5c337bd2c31a89cf81bd35fb5ff3b3585cce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jqhph/laravel-wherehasin/zipball/4efe5c337bd2c31a89cf81bd35fb5ff3b3585cce",
+                "reference": "4efe5c337bd2c31a89cf81bd35fb5ff3b3585cce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "^1.4",
+                "laravel/laravel": ">=5.5",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^7.5|~9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dcat\\Laravel\\Database\\WhereHasInServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dcat\\Laravel\\Database\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jqh",
+                    "email": "841324345@qq.com"
+                }
+            ],
+            "description": "Laravel ORM whereHasIn",
+            "homepage": "https://github.com/jqhph/dcat-admin",
+            "keywords": [
+                "laravel",
+                "orm",
+                "relation",
+                "whereHas"
+            ],
+            "support": {
+                "issues": "https://github.com/jqhph/laravel-wherehasin/issues",
+                "source": "https://github.com/jqhph/laravel-wherehasin/tree/0.8.0"
+            },
+            "time": "2021-07-29T07:10:31+00:00"
         },
         {
             "name": "doctrine/cache",

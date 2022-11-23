@@ -24,3 +24,13 @@ use Dcat\Admin\Show;
  * Admin::js('/packages/prettydocs/js/main.js');
  *
  */
+//雙擊列表資料進行修改
+$script = <<<JS
+      $("#grid-table > tbody > tr").on("dblclick",function() {
+         var obj = $(this).find(".feather.icon-edit-1");
+         if (obj.length == 1) {
+             obj.trigger("click")
+         }
+      })
+JS;
+Admin::script($script);

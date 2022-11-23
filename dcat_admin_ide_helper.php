@@ -44,9 +44,19 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection email
      * @property Grid\Column|Collection token
      * @property Grid\Column|Collection email_verified_at
+     * @property Grid\Column|Collection status
+     * @property Grid\Column|Collection is_top
+     * @property Grid\Column|Collection rank
+     * @property Grid\Column|Collection pic
+     * @property Grid\Column|Collection og_image
+     * @property Grid\Column|Collection meta_robots
+     * @property Grid\Column|Collection date_on
+     * @property Grid\Column|Collection date_off
+     * @property Grid\Column|Collection deletable
+     * @property Grid\Column|Collection work_case_id
+     * @property Grid\Column|Collection work_case_category_id
      * @property Grid\Column|Collection desc
      * @property Grid\Column|Collection url
-     * @property Grid\Column|Collection pic
      *
      * @method Grid\Column|Collection id(string $label = null)
      * @method Grid\Column|Collection name(string $label = null)
@@ -81,9 +91,19 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection email(string $label = null)
      * @method Grid\Column|Collection token(string $label = null)
      * @method Grid\Column|Collection email_verified_at(string $label = null)
+     * @method Grid\Column|Collection status(string $label = null)
+     * @method Grid\Column|Collection is_top(string $label = null)
+     * @method Grid\Column|Collection rank(string $label = null)
+     * @method Grid\Column|Collection pic(string $label = null)
+     * @method Grid\Column|Collection og_image(string $label = null)
+     * @method Grid\Column|Collection meta_robots(string $label = null)
+     * @method Grid\Column|Collection date_on(string $label = null)
+     * @method Grid\Column|Collection date_off(string $label = null)
+     * @method Grid\Column|Collection deletable(string $label = null)
+     * @method Grid\Column|Collection work_case_id(string $label = null)
+     * @method Grid\Column|Collection work_case_category_id(string $label = null)
      * @method Grid\Column|Collection desc(string $label = null)
      * @method Grid\Column|Collection url(string $label = null)
-     * @method Grid\Column|Collection pic(string $label = null)
      */
     class Grid {}
 
@@ -123,9 +143,19 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection email
      * @property Show\Field|Collection token
      * @property Show\Field|Collection email_verified_at
+     * @property Show\Field|Collection status
+     * @property Show\Field|Collection is_top
+     * @property Show\Field|Collection rank
+     * @property Show\Field|Collection pic
+     * @property Show\Field|Collection og_image
+     * @property Show\Field|Collection meta_robots
+     * @property Show\Field|Collection date_on
+     * @property Show\Field|Collection date_off
+     * @property Show\Field|Collection deletable
+     * @property Show\Field|Collection work_case_id
+     * @property Show\Field|Collection work_case_category_id
      * @property Show\Field|Collection desc
      * @property Show\Field|Collection url
-     * @property Show\Field|Collection pic
      *
      * @method Show\Field|Collection id(string $label = null)
      * @method Show\Field|Collection name(string $label = null)
@@ -160,9 +190,19 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection email(string $label = null)
      * @method Show\Field|Collection token(string $label = null)
      * @method Show\Field|Collection email_verified_at(string $label = null)
+     * @method Show\Field|Collection status(string $label = null)
+     * @method Show\Field|Collection is_top(string $label = null)
+     * @method Show\Field|Collection rank(string $label = null)
+     * @method Show\Field|Collection pic(string $label = null)
+     * @method Show\Field|Collection og_image(string $label = null)
+     * @method Show\Field|Collection meta_robots(string $label = null)
+     * @method Show\Field|Collection date_on(string $label = null)
+     * @method Show\Field|Collection date_off(string $label = null)
+     * @method Show\Field|Collection deletable(string $label = null)
+     * @method Show\Field|Collection work_case_id(string $label = null)
+     * @method Show\Field|Collection work_case_category_id(string $label = null)
      * @method Show\Field|Collection desc(string $label = null)
      * @method Show\Field|Collection url(string $label = null)
-     * @method Show\Field|Collection pic(string $label = null)
      */
     class Show {}
 

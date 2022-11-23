@@ -2,7 +2,8 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Repositories\WorkCase;
+use App\Models\WorkCase;
+use App\Models\WorkCaseCategory;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
@@ -18,14 +19,18 @@ class WorkCaseController extends AdminController
      */
     protected function grid()
     {
-        return Grid::make(new WorkCase(), function (Grid $grid) {
+        return Grid::make(WorkCase::with(['categories']), function (Grid $grid) {
             // $grid->model()->where('id', 2); 過濾列表資料
             // $grid->model()->orderBy(); 設置列表排序
+            // $grid->model()->with(['categories']);
 
             //列表欄位調整
             // $grid->column('id')->sortable();
             $grid->column('title');
-            // $grid->column('desc');
+            $grid->column('categories')->implode('title', '、')->label();
+            // $grid->column('categories')->display(function ($cates) {
+            //     return $cates->count() > 0 ? $cates->implode('title') : '';
+            // });
             $grid->column('url')->display(function ($url) {
                 return '<a href="' . $url . '" target="_blank">' . $url . '</a>';
             });
@@ -33,7 +38,7 @@ class WorkCaseController extends AdminController
                 return $pic ? '<img style="max-width:200px; max-height:200px;" src="' . asset('uploads/' . $pic) . '">' : '';
             });
             $grid->column('is_top')->switch();
-            $grid->column('status')->select(['1' => "顯示", '0' => "隱藏"]);
+            $grid->column('status')->select([1 => '顯示', 0 => '隱藏']);
             // $grid->column('status')->display(function ($status) { //調整呈現結果
             //     return $status == 1 ? '<span class="text-success"><b>顯示</b></span>' : '<span class="text-danger"><b>隱藏</b></span>';
             // });
@@ -43,11 +48,15 @@ class WorkCaseController extends AdminController
             //列表篩選功能
             $grid->filter(function (Grid\Filter $filter) {
                 // 设置created_at字段的范围查询
-                $filter->like('title');
-                $filter->equal('status');
-                $filter->equal('is_top');
+                $filter->panel();
+                $filter->equal('status')->select([1 => '顯示', 0 => '隱藏'])->width(3);
                 // $filter->between('created_at')->datetime();
             });
+            //表格規格篩選
+            // $grid->selector(function (Grid\Tools\Selector $selector) {
+            //     $selector->select('status', [1 => '顯示', 0 => '隱藏']);
+            // });
+
 
             $grid->toolsWithOutline(false); //功能按鈕樣式調整
 
@@ -63,32 +72,14 @@ class WorkCaseController extends AdminController
 
             //禁用詳情按鈕
             $grid->disableViewButton();
+            $grid->disableRefreshButton();
 
             $grid->rowSelector()->click(); //點選當前行任一位置選中
             $grid->addTableClass(['table-text-center']);
-            // $grid->disableActions();
+            $grid->quickSearch(['title', 'categories.title'])->placeholder('請輸入關鍵字......')->width(40); //快速搜尋
         });
     }
 
-    /**
-     * Make a show builder.
-     *
-     * @param mixed $id
-     *
-     * @return Show
-     */
-    protected function detail($id)
-    {
-        return Show::make($id, new WorkCase(), function (Show $show) {
-            // $show->field('id');
-            $show->field('title');
-            $show->field('desc');
-            $show->field('url');
-            $show->field('pic');
-            $show->field('created_at');
-            $show->field('updated_at');
-        });
-    }
 
     /**
      * Make a form builder.
@@ -97,13 +88,17 @@ class WorkCaseController extends AdminController
      */
     protected function form()
     {
-        return Form::make(new WorkCase(), function (Form $form) {
-            // $form->display('id');
-            $form->select('status')->options(['1' => "顯示", '0' => "隱藏"])->required();
+        return Form::make(WorkCase::with(['categories']), function (Form $form) {
+            $form->select('status')->options([1 => '顯示', 0 => '隱藏'])->default(1)->required();
             $form->switch('is_top');
+            $form->multipleSelect('categories')->options(WorkCaseCategory::where('status', 1)->pluck('title', 'id'))
+                ->customFormat(function ($v) { //把選項的資料轉成一維陣列來使資料能夠成功顯示
+                    if (!$v) return [];
+                    return array_column($v, 'id');
+                })->required();
             $form->text('title')->required();
             $form->textarea('desc');
-            $form->url('url')->required();
+            $form->url('url')->required()->help('連結為新分頁開啟');
             $form->image('pic')->autoUpload();
 
             // 数字输入框
