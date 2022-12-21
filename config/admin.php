@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<img src="/vendor/dcat-admin/images/logo.png" width="35"> &nbsp;' . env('ADMIN_NAME', 'Dcat Admin'),
+    'logo' => env('ADMIN_NAME', 'Dcat Admin'),
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<img src="/vendor/dcat-admin/images/logo.png">',
+    'logo-mini' => env('ADMIN_NAME', 'Dcat Admin'),
 
     /*
     |--------------------------------------------------------------------------
@@ -200,7 +200,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'helpers' => [
-        'enable' => true,
+        'enable' => false,
     ],
 
     /*
@@ -364,5 +364,10 @@ return [
         // When you use command `php artisan admin:ext-make` to generate extensions,
         // the extension files will be generated in this directory.
         'dir' => base_path('dcat-admin-extensions'),
+        'media-manager' => [
+            'disk'        => 'admin',
+            // 'disk' => ['public', 'admin'],
+            // 'allowed_ext' => 'jpg,jpeg,png,pdf,doc,docx,zip'
+        ]
     ],
 ];

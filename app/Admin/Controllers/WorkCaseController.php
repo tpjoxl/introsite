@@ -39,6 +39,7 @@ class WorkCaseController extends AdminController
             });
             $grid->column('is_top')->switch();
             $grid->column('status')->select([1 => '顯示', 0 => '隱藏']);
+            $grid->quickSearch(['title', 'categories.title'])->placeholder('請輸入關鍵字搜尋名稱或分類......')->width(40); //快速搜尋
             // $grid->column('status')->display(function ($status) { //調整呈現結果
             //     return $status == 1 ? '<span class="text-success"><b>顯示</b></span>' : '<span class="text-danger"><b>隱藏</b></span>';
             // });
@@ -50,33 +51,13 @@ class WorkCaseController extends AdminController
                 // 设置created_at字段的范围查询
                 $filter->panel();
                 $filter->equal('status')->select([1 => '顯示', 0 => '隱藏'])->width(3);
+                // $filter->equal('categories')->select(WorkCaseCategory::where('status', 1)->pluck('title', 'id'))->width(6);
                 // $filter->between('created_at')->datetime();
             });
             //表格規格篩選
             // $grid->selector(function (Grid\Tools\Selector $selector) {
             //     $selector->select('status', [1 => '顯示', 0 => '隱藏']);
             // });
-
-
-            $grid->toolsWithOutline(false); //功能按鈕樣式調整
-
-
-            // 禁用新增按鈕
-            // $grid->disableCreateButton();
-            // 显示新增按鈕
-            // $grid->showCreateButton();
-
-            //開啟彈窗創建表單 设置弹窗宽高，默认值为 '700px', '670px'
-            $grid->enableDialogCreate();
-            $grid->setDialogFormDimensions('70%', '70%');
-
-            //禁用詳情按鈕
-            $grid->disableViewButton();
-            $grid->disableRefreshButton();
-
-            $grid->rowSelector()->click(); //點選當前行任一位置選中
-            $grid->addTableClass(['table-text-center']);
-            $grid->quickSearch(['title', 'categories.title'])->placeholder('請輸入關鍵字......')->width(40); //快速搜尋
         });
     }
 

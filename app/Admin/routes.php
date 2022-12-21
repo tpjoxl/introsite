@@ -14,6 +14,11 @@ Route::group([
 
     $router->get('/', 'HomeController@index');
 
+    $router->resource('siteset', 'SitesetController')->only(['index', 'store']);
+    $router->resource('about', 'AboutController')->only(['index', 'store']);
+
     $router->resource('work_case_category', 'WorkCaseCategoryController');
     $router->resource('work_case', 'WorkCaseController');
+
+    $router->resource('contact', 'ContactController')->except(['create']);
 });

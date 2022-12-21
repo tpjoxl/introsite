@@ -48,8 +48,7 @@ class CreateWorkCaseCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog_categories');
-        Schema::dropIfExists('blog_category_translations');
-        Schema::dropIfExists('blog_category');
+        Schema::dropIfExists('work_case_categories');
+        Schema::dropIfExists('work_case_category');
     }
 }

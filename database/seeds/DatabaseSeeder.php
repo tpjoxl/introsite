@@ -1,5 +1,6 @@
 <?php
 
+use Dcat\Admin\Models\AdminSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->call(AdminSeeder::class);
+        $this->call(SitesetSeeder::class);
+        $this->call(AboutSeeder::class);
+        $this->call(WorkCaseSeeder::class);
+        $this->call(ContactSeeder::class);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Repositories\WorkCaseCategory;
+use App\Models\WorkCaseCategory;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
@@ -32,14 +32,7 @@ class WorkCaseCategoryController extends AdminController
                 $filter->between('created_at')->datetime()->width(6);
             });
 
-            $grid->toolsWithOutline(false); //功能按鈕樣式調整
-            $grid->enableDialogCreate();
-            $grid->setDialogFormDimensions('70%', '70%');
-            $grid->disableViewButton();
-            $grid->disableRefreshButton();
-            $grid->rowSelector()->click(); //點選當前行任一位置選中
-            $grid->addTableClass(['table-text-center']);
-            $grid->quickSearch(['title', 'categories.title'])->placeholder('請輸入關鍵字......')->width(40); //快速搜尋
+            $grid->quickSearch(['title'])->placeholder('請輸入關鍵字......')->width(40); //快速搜尋
         });
     }
 
