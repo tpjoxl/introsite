@@ -5,5 +5,6 @@
 <script src="{{asset('assets/workcase/js/breakpoints.min.js')}}"></script>
 <script src="{{asset('assets/workcase/js/util.js')}}"></script>
 <script src="{{asset('assets/workcase/js/main.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 

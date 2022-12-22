@@ -13,7 +13,7 @@ class CreateAdminTables extends Migration
 
     public function config($key)
     {
-        return config('admin.'.$key);
+        return config('admin.' . $key);
     }
 
     /**
@@ -30,6 +30,7 @@ class CreateAdminTables extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->string('remember_token', 100)->nullable();
+            $table->boolean('is_top')->default(false);
             $table->timestamps();
         });
 
@@ -37,6 +38,7 @@ class CreateAdminTables extends Migration
             $table->bigIncrements('id');
             $table->string('name', 50);
             $table->string('slug', 50)->unique();
+            $table->boolean('is_top')->default(false);
             $table->timestamps();
         });
 

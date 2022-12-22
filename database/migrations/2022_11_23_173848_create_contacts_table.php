@@ -15,7 +15,7 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->boolean('status')->default(true);
+            $table->boolean('status')->default(false);
             $table->boolean('is_top')->default(false);
             $table->string('name');
             $table->bigInteger('rank')->default(0);

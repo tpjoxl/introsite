@@ -72,6 +72,10 @@ input, select, textarea {
 	appearance: none;
 }
 
+.has-error {
+    border-color: #dd4b39;
+}
+
 /* Basic */
 
 	@-ms-viewport {

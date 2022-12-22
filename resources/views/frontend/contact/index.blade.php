@@ -2,6 +2,10 @@
 
 @section('body_class','is-preload')
 
+@section('head_script')
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+@endsection
+
 @section('content')
     <section id="banner">
         <div class="inner">
@@ -21,19 +25,25 @@
     <section id="contact">
         <div class="inner">
             <section>
-                <form method="post" action="#">
+                <form method="post" action="{{route('contact.submit')}}">
+                    @csrf
                     <div class="fields">
                         <div class="field half">
                             <label for="name">姓名</label>
-                            <input type="text" name="name" id="name" />
+                            <input type="text" name="name" id="name" value="{{old('name')}}" required/>
                         </div>
                         <div class="field half">
                             <label for="email">電子郵件</label>
-                            <input type="text" name="email" id="email" />
+                            <input type="text" name="email" id="email" value="{{old('email')}}" required/>
                         </div>
                         <div class="field">
                             <label for="message">訊息</label>
-                            <textarea name="message" id="message" rows="6"></textarea>
+                            <textarea name="message" id="message" rows="6" required>{{old('message')}}</textarea>
+                        </div>
+                        <div class="field half">
+                            <div class="captcha @error('g-recaptcha-response') has-error @enderror">
+                                <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
+                            </div>
                         </div>
                     </div>
                     <ul class="actions">
@@ -50,13 +60,13 @@
                         <a href="mailto:howardtuo@gmail.com">howardtuo@gmail.com</a>
                     </div>
                 </section>
-                <section>
+                {{-- <section>
                     <div class="contact-method">
                         <span class="icon solid alt fa-phone"></span>
                         <h3>Phone</h3>
                         <span>(000) 000-0000 x12387</span>
                     </div>
-                </section>
+                </section> --}}
                 <!-- <section>
                     <div class="contact-method">
                         <span class="icon solid alt fa-home"></span>

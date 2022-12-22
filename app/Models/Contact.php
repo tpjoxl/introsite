@@ -8,4 +8,12 @@ class Contact extends Model
 {
     use HasDateTimeFormatter;
     protected $table = 'contacts';
+    protected $fillable = [
+        'name',
+        'email',
+        'mesg',
+        'status',
+        'rank',
+        'token',
+    ];
 }

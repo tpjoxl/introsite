@@ -20,13 +20,25 @@ class SitesetSeeder extends Seeder
             'http_path'   => '',
             'parent_id'   => 0,
         ]);
-        Permission::create([
-            'name' => '網站基本內容',
-            'slug' => 'siteset',
-            'http_method' => '',
-            'http_path'   => '/siteset*',
-            'parent_id'   => $permission->id,
-        ]);
+        $permission_childs = [
+            [
+                'name' => '網站基本內容頁面',
+                'slug' => 'siteset_page',
+                'http_method' => 'GET',
+                'http_path'   => '/siteset',
+                'parent_id'   => $permission->id,
+            ],
+            [
+                'name' => '網站基本內容儲存',
+                'slug' => 'siteset_page_store',
+                'http_method' => 'POST',
+                'http_path'   => '/siteset',
+                'parent_id'   => $permission->id,
+            ]
+        ];
+        foreach ($permission_childs as $child) {
+            Permission::create($child);
+        }
 
         $menu = Menu::create([
             'parent_id'     => 0,

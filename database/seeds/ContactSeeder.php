@@ -20,13 +20,39 @@ class ContactSeeder extends Seeder
             'http_path'   => '',
             'parent_id'   => 0,
         ]);
-        Permission::create([
-            'name' => '與我聯絡列表',
-            'slug' => 'contact',
-            'http_method' => '',
-            'http_path'   => '/contact*',
-            'parent_id'   => $permission->id,
-        ]);
+        $permission_childs = [
+            [
+                'name' => '與我聯絡列表',
+                'slug' => 'contact',
+                'http_method' => 'GET',
+                'http_path'   => '/contact',
+                'parent_id'   => $permission->id,
+            ],
+            [
+                'name' => '與我聯絡建立',
+                'slug' => 'contact',
+                'http_method' => 'GET、POST',
+                'http_path'   => '/contact*',
+                'parent_id'   => $permission->id,
+            ],
+            [
+                'name' => '與我聯絡編輯',
+                'slug' => 'contact',
+                'http_method' => 'GET、PATCH',
+                'http_path'   => '/contact*',
+                'parent_id'   => $permission->id,
+            ],
+            [
+                'name' => '與我聯絡刪除',
+                'slug' => 'contact',
+                'http_method' => 'DELETE',
+                'http_path'   => '/contact*',
+                'parent_id'   => $permission->id,
+            ],
+        ];
+        foreach ($permission_childs as $child) {
+            Permission::create($child);
+        }
 
         $menu = Menu::create([
             'parent_id'     => 0,

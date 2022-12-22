@@ -42,6 +42,8 @@ class ContactController extends AdminController
                 $filter->panel();
                 $filter->equal('status')->select([1 => '已處理', 0 => '未處理'])->width(3);
             });
+
+            $grid->disableCreateButton();
             //表格規格篩選
             // $grid->selector(function (Grid\Tools\Selector $selector) {
             //     $selector->select('status', [1 => '顯示', 0 => '隱藏']);
