@@ -34,14 +34,14 @@
 
 ## 開發環境
 
-PHP => 7.2.5
+PHP => 7.2.5<br>
 Laravel => 7.30.6
 
 ## 前往網站
 
-[點擊前往網站前台](https://www.google.com.tw/?gfe_rd=cr&ei=eOfaV4SgKMPC1ASN67HgAg&gws_rd=ssl)
+網站前台連結:[點擊前往](http://intro.com)
 
-[點擊前往網站後台](https://www.google.com.tw/?gfe_rd=cr&ei=eOfaV4SgKMPC1ASN67HgAg&gws_rd=ssl)
+網站後台連結:[點擊前往](http://intro.com/backend)<br>
 網站後台訪客登入資訊
 帳號=guest
 密碼=guest1234
