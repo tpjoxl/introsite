@@ -5,19 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @php
             // SEO Title
-            $page_title = ($custom_page_title??$data->title);
+            $page_title = $custom_page_title;
             // SEO Description
-            $page_description = ($data->seo_description??$data->description??$setting->seo_description);
+            $page_description = $custom_page_description;
             // SEO Keyword
             $page_keyword = ($data->seo_keyword??$setting->seo_keyword);
             // og image
             $page_pic = ($data->og_image[0]??$data->pic[0]??$setting->og_image[0]);
             // og title
-            $page_og_title = ($data->og_title??$custom_page_title??$data->seo_title??$data->title??$setting->og_title??$setting->seo_title);
-            $page_og_title .= ($page_og_title?' - ':'').$setting->name;
+            $page_og_title = $custom_page_title;
             // og description
-            $page_og_description = ($data->og_description??$data->seo_description??$data->description??$setting->og_description??$setting->seo_description);
+            $page_og_description = $custom_page_description;
         @endphp
+        <meta name="description" content="{{$page_description}}">
+        <meta property="og:title" content="{{$page_og_title}}">
+        <meta property="og:description" content="{{$page_og_description}}">
+        <meta property="og:site_name" content="{{ $setting->getData('siteset','site_name')}} ">
+
         <title>{{$page_title}}</title>
 
         <link rel="stylesheet" href="{{asset('assets/home/css/main.css')}}" />
@@ -53,11 +57,11 @@
 				<!-- Main -->
 					<div id="main">
 					<!-- Work -->
-						<article id="blog">
-							<h2 class="major" style="text-align: center;">正在建置中，敬請期待</h2>
+						{{-- <article id="blog">
+							<h2 class="major" style="text-align: center;">正在建置中，敬請期待</h2> --}}
 							<!-- <span class="image main"><img src="images/home/pic02.jpg" alt="" /></span> -->
 							<!-- <p style="text-align: center;">正在建置中，敬請期待</p>						 -->
-						</article>
+						{{-- </article> --}}
 					<!-- Contact -->
 						{{-- <article id="contact">
 							<h2 class="major">Contact</h2>

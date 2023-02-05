@@ -28,9 +28,9 @@ class AboutController extends Controller
     {
         return Form::make(new Setting(), function (Form $form) {
             $settings = new Setting();
-            $form->editor('text1')->required()->default($settings->getData('siteset', 'text1'));
-            $form->editor('text2')->required()->default($settings->getData('siteset', 'text2'));
-            $form->editor('text3')->required()->default($settings->getData('siteset', 'text3'));
+            $form->editor('text1')->default($settings->getData('about', 'text1'));
+            $form->editor('text2')->default($settings->getData('about', 'text2'));
+            $form->editor('text3')->default($settings->getData('about', 'text3'));
 
             $form->disableListButton();
             $form->disableHeader(); // 隐藏 header

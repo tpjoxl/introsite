@@ -10,7 +10,8 @@ class HomeController extends Controller
     {
         $data = '';
         $custom_page_title = 'HAO CHEN | Personal Site';
+        $custom_page_description = '您好我是葦豪，是一名對程式富有熱情的後端工程師!';
 
-        return view('frontend.home', compact('data', 'custom_page_title', 'prefix'));
+        return view('frontend.home', compact('data', 'custom_page_title', 'custom_page_description', 'prefix'));
     }
 }

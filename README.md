@@ -16,7 +16,7 @@
     <a><img src="https://img.shields.io/badge/laravel-5.5+-59a9f8.svg?style=flat" ></a>
 </p>
 
-<p align=""><code>Dcat Admin</code>是一个基于<a href="https://www.laravel-admin.org/" target="_blank">laravel-admin</a>二次開發而成的後台系統構建工具，只需很少的程式即可快速構建一個功能完善的高顏質後台系統。内置豐富的後台常用組件，讓開發者告別冗長的HTML代碼，對後端開發者非常友好。</p>
+<p align=""><code>Dcat Admin</code>是一个基於<a href="https://www.laravel-admin.org/" target="_blank">laravel-admin</a>二次開發而成的後台系統構建工具，只需很少的程式即可快速構建一個功能完善的高顏質後台系統。内置豐富的後台常用組件，讓開發者告別冗長的HTML代碼，對後端開發者非常友好。</p>
 
 -   [官方網站](http://www.dcatadmin.com)
 -   [中文文檔](https://learnku.com/docs/dcat-admin)
@@ -35,13 +35,14 @@
 ## 開發環境
 
 PHP => 7.2.5<br>
-Laravel => 7.30.6
+Laravel => 7.30.6<br>
+Dcat Admin => v2.2.2
 
 ## 前往網站
 
-網站前台連結:[點擊前往](http://intro.com)
+網站前台連結:[點擊前往](http://intro.weihaosite.nde.tw)
 
-網站後台連結:[點擊前往](http://intro.com/backend)<br>
-網站後台訪客登入資訊
-帳號=guest
+網站後台連結:[點擊前往](http://intro.weihaosite.nde.tw/backend)<br>
+網站後台訪客登入資訊<br>
+帳號=guest<br>
 密碼=guest1234
