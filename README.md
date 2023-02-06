@@ -38,6 +38,7 @@ PHP => 7.2.5<br>
 Laravel => 7.30.6<br>
 Dcat Admin => v2.2.2
 
+<<<<<<< HEAD
 ## 前往網站
 
 網站前台連結:[點擊前往](http://intro.weihaosite.mickey.tw)
@@ -48,3 +49,5 @@ Dcat Admin => v2.2.2
 
 帳號=guest<br>
 密碼=guest1234
+=======
+>>>>>>> origin/main
