@@ -38,11 +38,3 @@ PHP => 7.2.5<br>
 Laravel => 7.30.6<br>
 Dcat Admin => v2.2.2
 
-## 前往網站
-
-網站前台連結:[點擊前往](http://intro.weihaosite.nde.tw)
-
-網站後台連結:[點擊前往](http://intro.weihaosite.nde.tw/backend)<br>
-網站後台訪客登入資訊<br>
-帳號=guest<br>
-密碼=guest1234
