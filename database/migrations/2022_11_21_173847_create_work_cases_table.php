@@ -19,6 +19,7 @@ class CreateWorkCasesTable extends Migration
             $table->boolean('is_top')->default(0);
             $table->string('title');
             $table->string('desc', 512)->nullable();
+            $table->longText('text')->nullable();
             $table->string('url', 512)->nullable();
             $table->string('pic', 512)->nullable();
             $table->bigInteger('rank')->default(0);

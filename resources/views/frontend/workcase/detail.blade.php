@@ -33,68 +33,56 @@
 
 
     <!-- Two -->
-        <section id="two" class="spotlights">
-            <section>
-                <a href="generic.html" class="image">
-                    <img src="{{asset('assets/images/workcase/pic08.jpg')}}" alt="" data-position="center center" />
-                </a>
-                <div class="content">
-                    <div class="inner">
-                        <header class="major">
-                            <h3>Orci maecenas</h3>
-                        </header>
-                        <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-                        <ul class="actions">
-                            <li><a href="generic.html" class="button">Learn more</a></li>
-                        </ul>
+        @if($data->text)
+            <section id="two" class="spotlights">
+                {!!$data->text!!}
+                {{-- <section>
+                    <a href="generic.html" class="image">
+                        <img src="https://fakeimg.pl/960x860/" alt="" data-position="center center" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Orci maecenas</h3>
+                            </header>
+                            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+                            <ul class="actions">
+                                <li><a href="generic.html" class="button">Learn more</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section>
-                <a href="generic.html" class="image">
-                    <img src="{{asset('assets/images/workcase/pic09.jpg')}}" alt="" data-position="top center" />
-                </a>
-                <div class="content">
-                    <div class="inner">
-                        <header class="major">
-                            <h3>Rhoncus magna</h3>
-                        </header>
-                        <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-                        <ul class="actions">
-                            <li><a href="generic.html" class="button">Learn more</a></li>
-                        </ul>
+                </section>
+                <section>
+                    <a href="generic.html" class="image">
+                        <img src="https://fakeimg.pl/960x860/" alt="" data-position="top center" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Rhoncus magna</h3>
+                            </header>
+                            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+                            <ul class="actions">
+                                <li><a href="generic.html" class="button">Learn more</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </section> --}}
             </section>
-            <section>
-                <a href="generic.html" class="image">
-                    <img src="{{asset('assets/images/workcase/pic10.jpg')}}" alt="" data-position="25% 25%" />
-                </a>
-                <div class="content">
-                    <div class="inner">
-                        <header class="major">
-                            <h3>Sed nunc ligula</h3>
-                        </header>
-                        <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-                        <ul class="actions">
-                            <li><a href="generic.html" class="button">Learn more</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </section>
+        @endif
 
     <!-- Three -->
-        <section id="three">
-            <div class="inner">
-                <header class="major">
-                    <h2>Massa libero</h2>
-                </header>
-                <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-                <ul class="actions">
-                    <li><a href="generic.html" class="button next">Get Started</a></li>
-                </ul>
-            </div>
-        </section>
+        @if ($data->url)
+            <section id="three">
+                <div class="inner">
+                    {{-- <header class="major">
+                        <h2>網站連結</h2>
+                    </header> --}}
+                    <ul class="actions">
+                        <li><a href="{{$data->url}}" target="_blank" class="button next">點擊前往網站連結</a></li>
+                    </ul>
+                </div>
+            </section>
+        @endif
     </div>
 @endsection

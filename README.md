@@ -40,9 +40,11 @@ Dcat Admin => v2.2.2
 
 ## 前往網站
 
-網站前台連結:[點擊前往](http://intro.weihaosite.nde.tw)
+網站前台連結:[點擊前往](http://intro.weihaosite.mickey.tw)
 
-網站後台連結:[點擊前往](http://intro.weihaosite.nde.tw/backend)<br>
+網站後台連結:[點擊前往](http://intro.weihaosite.mickey.tw/intro_backstage)<br>
+
 網站後台訪客登入資訊<br>
+
 帳號=guest<br>
 密碼=guest1234

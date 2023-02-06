@@ -79,7 +79,8 @@ class WorkCaseController extends AdminController
                 })->required();
             $form->text('title')->required();
             $form->textarea('desc');
-            $form->url('url')->required()->help('連結為新分頁開啟');
+            $form->editor('text');
+            $form->url('url')->help('連結為新分頁開啟');
             $form->image('pic')->autoUpload();
 
             // 数字输入框
